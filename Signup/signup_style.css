@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('../images/image1.png') no-repeat;
+    background-size: cover; 
+    background-position: center;
+    box-sizing: border-box;
+    transition: background-image 3s ease;
+}
+
+.header-container {
+    background: transparent;
+    backdrop-filter: blur(10px);
+}
+
+
+.header-container h1 {
+    margin-top: 0px ;
+    border-bottom: 1px solid #fff;
+    padding: 30px;
+    color: #fff;
+    font-size: 40px;
+}
+
+.signup-container {
+    position: relative;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    top: 30px;
+}
+
+.signup-content {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 1px solid #fff;
+    height: 730px;
+    width: 450px;
+    border-radius: 10px;
+    
+}
+
+.signup-content h1 {
+    margin-top: 20px;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.registration-data {
+    margin-top: 30px;
+    border-radius: 40px;
+    padding-left: 10px;
+    width: 60%;
+    height: 40px;
+    background: transparent;
+    color: #fff;
+}
+
+.registration-data::placeholder {
+    color: #c9c3c3;
+}
+
+#courseDegree {
+    color: #fff;
+    height: 45px;
+    width: 65%;
+    border: 2px solid #000000;
+    text-align: center;
+}
+
+
+.option {
+    background-color: #c9c3c3;
+    color: #000000; 
+    cursor: pointer;
+}
+
+
+.signup-content p {
+    margin-top: 40px;
+    color: #fff;
+}
+
+.icon {
+    position: absolute;
+    transform: translateX(-150%) translateY(160%);
+    width: 25px;
+    height: auto;
+}
+
+.signup-button {
+    background-color: #fff;
+    color: black;
+    padding: 0px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 60%;
+    height: 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.signup-content p {
+    transform: translateY(-100%);
+    padding-bottom: 30px;
+    
+}
+
+#error-message {
+    color: red;
+    font-weight: bolder;
+    font-size: 17px;
+    transform: translateY(-1520%);
+
+}
+
+.submitted-container {
+    position: relative;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    top: 30px;
+}
+
+.submitted-content {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 1px solid #fff;
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.submitted-content h1 {
+    margin-top: 30px;
+    color: #01730b;
+    margin-bottom: 0;
+}
+
+.message {
+    color: #fff;
+    font-size: large;
+}
+
+.message p {
+    margin: 8px;
+}
