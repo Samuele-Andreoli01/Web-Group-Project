@@ -24,7 +24,7 @@
                 <input type="password" id="pwd" name="pwd" placeholder="password">
                 <img class="icon "src="../images/lock-icon.png" alt="Icon">
                 <br>
-                <button type="submit" class="login-button">Login</button> 
+                <button type="submit" name="submit" class="login-button">Login</button> 
             </form>
         <p>Don't have an account? <a href="../Signup/signup.php">Sign Up</a></p>
         </div>

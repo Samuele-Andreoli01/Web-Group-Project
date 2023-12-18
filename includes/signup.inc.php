@@ -20,6 +20,7 @@ if (isset($_POST['submit'])){
     // Signup User
     $signup->signupStudent();
 
+    // Redirecting the user to a 'confirmed application' page
     header("location: ../Signup/applicationSubmitted.php");
 
 }

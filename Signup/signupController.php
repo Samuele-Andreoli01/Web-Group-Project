@@ -1,6 +1,6 @@
 <?php
 
-class SignupController extends signupModel {
+class SignupController extends SignupModel {
 
     private $courseDegree;
     private $name;

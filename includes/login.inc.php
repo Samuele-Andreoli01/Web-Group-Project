@@ -1,69 +1,32 @@
 <?php
 
-$servername = "localhost";
-$username = "Samuele Andreoli";
-$password = "Calciatore01$";
-$database = "hellohello";
-
-// Connecting to mysql database
-$conn = mysqli_connect($servername, $username, $password,$database);
-
-// Check connection
-if (mysqli_error($conn)) {
-  die("Connection failed: " . mysqli_error($conn));
-}   else {
-    echo "Connection Successful";
-}
-
-if (!isset($_POST['userID']) || !isset($_POST['pwd'])) {
-    echo "<p>Invalid details<p>";
-} else {
-
-    $userID = mysqli_real_escape_string($conn, $_POST['userID']);
-    $pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
+if (isset($_POST['submit'])){
     
-
-    $sql = "SELECT * FROM admins
-            WHERE id = '$userID' AND
-            passwords = '$pwd'";
-
-    $result = mysqli_query($conn,$sql);
+    // Grabbing data from login.php form
+    $userID = $_POST['userID'];
+    $pwd = $_POST['pwd'];
     
-    if (!$result) {
-        die("Query failed: " . mysqli_error($conn));
-    } else {
-        if (mysqli_num_rows($result) == 1) {
-            echo "<p>Login successful</p>";
-        } else {
-            echo "<p>Invalid login details</p>";
+    // Include external files
+    include "../db.php";
+    include "../Login/loginModel.php";
+    include "../Login/loginController.php";
+    $login = new LoginController($userID,$pwd);
+
+    // Signup User
+    $login->loginUser();
+
+    // Redirecting the user to their Homepage
+    $userType = $userID[0];
+        if ($userType == '1')
+        {
+            header("location: ../Admin/index.php");
+        } 
+        elseif ($userType == '2')
+        {
+            header("location: ../Tutor/index.php");
         }
-
-    }
-
-    
+        elseif ($userType == '3')
+        {
+            header("location: ../Student/index.php");
+        }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-    if (empty($_POST["userID"])) {
-        echo "<p>Enter User ID<p>";
-    } else {
-        $userID = $_POST["userID"];
-    }
-
-    if (empty($_POST["pwd"])) {
-        echo "<p>Enter the password<p>";
-    } else {
-        $pwd = $_POST["pwd"];
-    }
-*/

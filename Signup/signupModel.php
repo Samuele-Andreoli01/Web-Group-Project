@@ -21,7 +21,7 @@ class SignupModel extends Database {
         {
             $stmt = null;
             mysqli_close($conn);
-            header("location signup.php?error=stmtfailed");
+            header("location: signup.php?error=stmtfailed");
             exit();
         }
             
@@ -34,7 +34,6 @@ class SignupModel extends Database {
         $conn = $this->connect();
         $stmt = $conn->prepare('SELECT email FROM students WHERE email = ?;');
         $stmt->bind_param('s', $email);
-        //$result = $stmt->execute();
         $stmt->execute();
 
         if ($stmt->errno)
