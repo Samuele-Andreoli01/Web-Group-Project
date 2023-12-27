@@ -44,7 +44,9 @@ $sql = "CREATE TABLE IF NOT EXISTS tutors (
   first_name VARCHAR(50) NOT NULL,
   surname VARCHAR(50) NOT NULL,
   email VARCHAR(100) NOT NULL,
-  pwd VARCHAR(255) NOT NULL
+  pwd VARCHAR(255) NOT NULL,
+  coursedegree_id INT,
+  FOREIGN KEY (coursedegree_id) REFERENCES coursedegrees(id)
 ) AUTO_INCREMENT = 22024000";
 mysqli_query($connection, $sql) or die("Connection with database has failed: " . mysqli_error($connection));
 
@@ -58,7 +60,8 @@ $sql = "CREATE TABLE IF NOT EXISTS coursedegrees (
 mysqli_query($connection, $sql) or die("Connection with database has failed: " . mysqli_error($connection));
 
 
-// COURSE-TUTOR
+// COURSE_TUTOR
+/*
 $sql = "CREATE TABLE IF NOT EXISTS course_tutor (
   coursedegree_id INT,
   tutor_id INT,
@@ -67,7 +70,7 @@ $sql = "CREATE TABLE IF NOT EXISTS course_tutor (
   FOREIGN KEY (tutor_id) REFERENCES tutors(id)
 )";
 mysqli_query($connection, $sql) or die("Connection with database has failed: " . mysqli_error($connection));
-
+*/
 
 // STUDENTS
 $sql = "CREATE TABLE IF NOT EXISTS students (
@@ -97,7 +100,6 @@ $sql = "CREATE TABLE IF NOT EXISTS applicants (
 ) AUTO_INCREMENT = 32024000";
 mysqli_query($connection, $sql) or die("Connection with database has failed: " . mysqli_error($connection));
 
-mcxkdmkcxmdk
 /*
 $coursesToInsert = ["Accounting & Finance",
                     "Business Management",

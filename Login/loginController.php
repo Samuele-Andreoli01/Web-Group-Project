@@ -19,7 +19,7 @@ class LoginController extends LoginModel {
             exit();
         }
 
-        $userType = $userID[0];
+        $userType = $this->userID[0];
         if ($userType == '1')
         {
             $this->getAdmin($this->userID,$this->pwd);
@@ -34,7 +34,7 @@ class LoginController extends LoginModel {
         }
         else
         {
-            header("location: ../Login/login.php?error=usernotfound");
+            header("location: ../Login/login.php?error=usernotfoundcontr");
             exit();
         }
     

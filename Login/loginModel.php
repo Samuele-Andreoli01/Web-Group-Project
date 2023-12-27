@@ -26,7 +26,7 @@ class LoginModel extends Database {
         {
             $stmt = null;
             mysqli_close($conn);
-            header("location: login.php?error=usernotfound");
+            header("location: login.php?error=usernotfoundstudent");
             exit();
         }
         
