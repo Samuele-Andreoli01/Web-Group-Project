@@ -97,6 +97,7 @@ $sql = "CREATE TABLE IF NOT EXISTS applicants (
 ) AUTO_INCREMENT = 32024000";
 mysqli_query($connection, $sql) or die("Connection with database has failed: " . mysqli_error($connection));
 
+mcxkdmkcxmdk
 /*
 $coursesToInsert = ["Accounting & Finance",
                     "Business Management",
