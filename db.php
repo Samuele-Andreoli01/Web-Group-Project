@@ -83,6 +83,20 @@ $sql = "CREATE TABLE IF NOT EXISTS students (
 ) AUTO_INCREMENT = 32024000";
 mysqli_query($connection, $sql) or die("Connection with database has failed: " . mysqli_error($connection));
 
+// APPLICANTS
+$sql = "CREATE TABLE IF NOT EXISTS applicants (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  first_name VARCHAR(50) NOT NULL,
+  surname VARCHAR(50) NOT NULL,
+  birth_date DATE NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  pwd VARCHAR(255) NOT NULL,
+  level_year ENUM('1', '2', '3') NOT NULL,
+  coursedegree_id INT NOT NULL,
+  FOREIGN KEY (coursedegree_id) REFERENCES coursedegrees(id)
+) AUTO_INCREMENT = 32024000";
+mysqli_query($connection, $sql) or die("Connection with database has failed: " . mysqli_error($connection));
+
 /*
 $coursesToInsert = ["Accounting & Finance",
                     "Business Management",

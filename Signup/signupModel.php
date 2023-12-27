@@ -29,6 +29,7 @@ class SignupModel extends Database {
         
     }
     
+    // This method checks if the entered email is already taken
     protected function checkStudent($email) 
     {
         $conn = $this->connect();
